@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main id="terms">
+    <div id="collections" class="grape">
+        <div class="container">
+	    <h1>{{ .Title }}</h1>
+	    <ul id="groups">
+	        {{ range $key, $value := .Data.Terms }}
+		<li>
+		    <a href="{{ (print "/" $.Data.Plural "/" (lower $key)) | relURL }}">#{{ $key }}&nbsp;({{ len $value }})</a>
+		</li>
+		{{ end }}
+            </ul>
+	</div>
+    </div>
+</main>
+{{ end }}

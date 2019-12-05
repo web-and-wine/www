@@ -1,0 +1,24 @@
+baseurl = "https://example.com"
+languageCode = "en-us"
+title = "Hugo Grapes Theme"
+enableEmoji = true
+
+[permalinks]
+  post = "/posts/:slug/"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts"
+    weight = 20
+
+[params]
+avatar = "img/grapes.svg"

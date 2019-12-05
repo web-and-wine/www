@@ -1,0 +1,30 @@
+{{ define "main" }}
+<main id="home">
+    <div id="about" class="grape">
+        <div class="container">
+	    <div class="avatar">
+		{{ with .Site.Params.avatar }}
+		<img src="{{ . }}" alt="Avatar">
+		{{ end }}
+	    </div>
+            <div id="content">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+
+    <div id="recent-posts" class="sand">
+	<div class="container">
+            <h2>Recent Posts</h2>
+            <ul>
+                {{ range first 5 .Site.RegularPages.ByPublishDate.Reverse }}
+                    <li>
+                        <span>{{ .Render "time-element" }}</span>
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</main>
+{{ end }}

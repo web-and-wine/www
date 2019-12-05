@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main id="single">
+    <div id="post" class="white">
+	<div class="container">
+	    <div id="title">
+                <h1>{{ .Title }}</h1>
+                {{ .Render "time-element" }}
+	    </div>
+            <section class="post-content">
+                {{ .Content }}
+            </section>
+	</div>
+    </div>
+</main>
+{{ end }}
