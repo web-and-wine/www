@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:web-and-wine/www.git
+	branch = gh-pages
