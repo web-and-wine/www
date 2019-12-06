@@ -1,9 +1,18 @@
-<header>
-    <nav class="breadcrumb grape">
-	<h4><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h4>
-	<div id="space"></div>
-        {{ range .Site.Menus.main }}
-        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
-        {{ end }}
-    </nav>
+<header class="bg-dark text-light py-5">
+    <div class="container text-center">
+
+        <a href="/"><img src="./logo.png" class="logo" alt="logo web&amp;wine augsburg"></a>
+        <h1 class="jumbotron-heading">Web & Wine</h1>
+        <p class="lead">We have a dream that one day we will ... räusper ... dass wir uns an einem festgelegten Tag
+            zusammenfinden und uns bei einer oder mehreren Flaschen Wein über die neuesten Errungenschaften im
+            Bereich Web-Development und -design austauschen. Dabei wollen wir nicht zu framework-spezifisch sein,
+            sondern uns eher mit neuen Technologien beschäftigen, welche für den größtmöglichen Teil von uns
+            relevant sind. Neue Menschen, neue Gesichter, neue Meinungen und neue Eindrücke. Die Meta-Ebene ist uns
+            extrem wichtig!</p>
+        <p>
+            <a href="https://www.meetup.com/de-DE/web-and-wine/" class="btn btn-primary my-2">
+                Signup at Meetup.com
+            </a>
+        </p>
+    </div>
 </header>

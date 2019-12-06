@@ -1,0 +1,33 @@
+{{ $json := getJSON "https://api.meetup.com/web-and-wine/events?" .meetupParams }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>{{ .heading }}</h2>
+            <hr class="primary">
+        </div>
+    </div>
+    <div class="row mb-2">
+
+        {{ if not $json }}
+        <div class="col-md-12 text-center">
+           Stay tuned until next month or after the summer-break!
+        </div>
+        {{ end }}
+
+        {{ range first 2 $json }}
+        <div class="col-md-6">
+            <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <strong class="d-inline-block mb-2 text-primary">{{ .venue.name }}</strong>
+                    <h3 class="mb-0">
+                        <a class="text-dark" href="{{ .link }}">{{ .name }}</a>
+                    </h3>
+                    <div class="mb-1 text-muted">
+                        {{ div .created 1000 | int | dateFormat "Monday, Jan 2, 2006" }}</div>
+                    <p class="card-text mb-auto">{{ safeHTML .description }}</p>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>

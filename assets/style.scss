@@ -1,0 +1,22 @@
+// Your variable overrides
+$theme-colors: (
+  "primary": #99cd5d,
+  "danger": #ff4136
+);
+
+$body-bg: #fff !default;
+$jumbotron-bg: #222;
+$jumbotron-color: #fff;
+
+
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$fa-font-path: "../fonts/vendor";
+
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+
+.bg-dark {
+    background-color: #222 !important;
+}

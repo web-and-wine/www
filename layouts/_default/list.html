@@ -1,18 +1,15 @@
 {{ define "main" }}
-<main id="list">
-    <div id="posts" class="grape">
-	<div class="container">
-            <h1>{{ .Title }}</h1>
-            <ul>
-                {{ range .Site.RegularPages }}
-                <li>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    <p>{{ .Render "time-element" }}</p>
-		    <p>{{ .Summary }}...</p>
-                </li>
-                {{ end }}
-            </ul>
-        </div>
+<main>
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        <ul>
+            {{ range .Site.RegularPages }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <p>{{ .Summary }}...</p>
+            </li>
+            {{ end }}
+        </ul>
     </div>
 </main>
 {{ end }}

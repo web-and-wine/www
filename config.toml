@@ -1,6 +1,6 @@
-baseurl = "https://example.com"
+baseurl = "https://webandwine.org"
 languageCode = "en-us"
-title = "Hugo Grapes Theme"
+title = "Web&Wine"
 enableEmoji = true
 
 [permalinks]
@@ -19,6 +19,3 @@ enableEmoji = true
     name = "Posts"
     url = "/posts"
     weight = 20
-
-[params]
-avatar = "img/grapes.svg"

@@ -4,5 +4,6 @@
     <title>{{ with .Page.Title }}{{ . }} - {{ end }}{{ .Site.Title }}</title>
     <base href="{{ .Site.BaseURL }}">
     <link rel="stylesheet" href="{{ "css/styles.css" | absURL }}">
-    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+    {{ $style := resources.Get "style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
