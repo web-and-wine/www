@@ -1,9 +1,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ with .Page.Title }}{{ . }} - {{ end }}{{ .Site.Title }}</title>
+    <title>{{ with .Page.Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
     <base href="{{ .Site.BaseURL }}">
-    <link rel="stylesheet" href="{{ "css/styles.css" | absURL }}">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
     {{ $style := resources.Get "style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
