@@ -106,3 +106,8 @@ typings/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node
+
+
+vendor/
+static/css/style.css
+static/css/style.css.map
