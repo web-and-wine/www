@@ -23,7 +23,7 @@
                         <a class="text-dark" href="{{ .link }}">{{ .name }}</a>
                     </h3>
                     <div class="mb-1 text-muted">
-                        {{ div .created 1000 | int | dateFormat "Monday, Jan 2, 2006" }}</div>
+                        {{ div .time 1000 | int | dateFormat "Monday, Jan 2, 2006" }}</div>
                     <p class="card-text mb-auto">{{ safeHTML .description }}</p>
                 </div>
             </div>
