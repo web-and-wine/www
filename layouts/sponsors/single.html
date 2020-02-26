@@ -10,7 +10,7 @@
 
       {{ $img := (.Resources.ByType "image").GetMatch "*" }}
       {{ with $img }}
-      <img src="{{ .Permalink }}" alt="{{ $.Title }}">
+      <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
       {{ end }}
     </div>
 

@@ -69,7 +69,7 @@
             {{ range first 5 .Site.RegularPages.ByPublishDate.Reverse }}
             <li>
                 <span>{{ .Render "time-element" }}</span>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </li>
             {{ end }}
         </ul>
