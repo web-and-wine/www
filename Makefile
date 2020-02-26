@@ -5,7 +5,7 @@ NPM := npm
 install:
 	$(NPM) install
 build-bootstrapjs:
-	mkdir -p static/fonts/vendor/
+	mkdir -p static/js/vendor/
 	cp node_modules/bootstrap/dist/js/bootstrap.min.js static/js/vendor/
 copy-webfonts:
 	mkdir -p static/fonts/vendor/
