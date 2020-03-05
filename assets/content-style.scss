@@ -1,0 +1,37 @@
+.content-list {
+  margin: 20px 0;
+}
+
+.content-single {
+  margin: 20px 0;
+}
+
+.sponsor-single {
+  img {
+    max-height: 200px;
+  }
+}
+
+.sponsor-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .sponsor-list-anchor {
+    width: 25%;
+  }
+
+  .sponsor-list-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      max-height: 100px;
+      width: auto;
+      padding: 10px;
+    }
+  }
+}

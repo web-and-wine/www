@@ -1,13 +1,12 @@
 {{ define "main" }}
-<main>
+<main class="content-single">
   <div class="container">
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mb-3">
       <h1>{{ .Title }}</h1>
     </div>
 
-    <div class="d-flex justify-content-center">
-
+    <div class="d-flex justify-content-center mb-3 sponsor-single">
       {{ $img := (.Resources.ByType "image").GetMatch "*" }}
       {{ with $img }}
       <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">

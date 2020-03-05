@@ -1,15 +1,9 @@
 {{ define "main" }}
-<main>
+<main class="content-list">
     <div class="container">
         <h1>{{ .Title }}</h1>
-        <ul>
-            {{ range .Pages }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <p>{{ .Summary }}...</p>
-            </li>
-            {{ end }}
-        </ul>
+
+        {{ partial "sponsor-list.html" .}}
     </div>
 </main>
 {{ end }}
