@@ -20,3 +20,6 @@ $fa-font-path: "../fonts/vendor";
 .bg-dark {
     background-color: #222 !important;
 }
+
+@import "./content-style.scss";
+@import "./base-style.scss";

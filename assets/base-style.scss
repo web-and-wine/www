@@ -1,0 +1,13 @@
+.body-flex-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+
+  .content-list {
+    flex-grow: 1;
+  }
+
+  .content-single {
+    flex-grow: 1;
+  }
+}
