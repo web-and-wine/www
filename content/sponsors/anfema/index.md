@@ -1,6 +1,8 @@
 ---
 resources:
 - src: '**-light.png'
+  name: logo-light
+
 
 title: "Anfema"
 external-link: https://www.anfe.ma/

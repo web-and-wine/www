@@ -1,6 +1,7 @@
 ---
 resources:
 - src: '**-light.png'
+  name: logo-light
 
 title: "Xitaso"
 external-link: https://xitaso.com/
