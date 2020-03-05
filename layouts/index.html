@@ -56,11 +56,24 @@
                     </div>
                 </div>
             </div>
-
     </section>
 
     <section class="py-5">
         {{ partial "meetup-events.html" (dict "context" . "meetupParams" "sign=true&photo-host=public&desc=true&has_ended=true&status=past" "heading" "Previous Events") }}
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Sponsors</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+            <div class="row">
+                {{ partial "sponsor-list.html" .Site }}
+            </div>
+        </div>
     </section>
 
     <!-- <div>
