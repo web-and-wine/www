@@ -1,6 +1,7 @@
 ---
 resources:
 - src: '**-light.png'
+  name: logo-light
 
 title: "AraCom"
 external-link: https://aracom.de/

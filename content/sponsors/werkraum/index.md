@@ -1,6 +1,7 @@
 ---
 resources:
-- src: '**-light.png'
+- src: 'werkraum-light.svg'
+  name: logo-light
 
 title: "Werkraum"
 external-link: https://werkraum-augsburg.de/

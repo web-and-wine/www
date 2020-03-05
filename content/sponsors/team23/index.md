@@ -1,8 +1,9 @@
 ---
 resources:
 - src: '**-light.png'
+  name: logo-light
 
-title: "„Team23"
+title: "Team23"
 external-link: https://www.team23.de/
 ---
 

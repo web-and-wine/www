@@ -1,6 +1,7 @@
 ---
 resources:
-- src: '**-light.png'
+- src: '**-light.svg'
+  name: logo-light
 
 title: "Hochschule Augsburg"
 external-link: https://www.hs-augsburg.de/

@@ -1,6 +1,7 @@
 ---
 resources:
 - src: '**-light.png'
+  name: logo-light
 
 title: "nfq"
 external-link: https://www.nfq.de/

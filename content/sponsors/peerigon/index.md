@@ -1,6 +1,7 @@
 ---
 resources:
-- src: '**-light.png'
+- src: '**-light.svg'
+  name: logo-light
 
 title: "Peerigon"
 external-link: https://peerigon.com

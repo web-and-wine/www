@@ -1,6 +1,7 @@
 ---
 resources:
 - src: '**-light.png'
+  name: logo-light
 
 title: "Elephantshop"
 external-link: https://www.elephantshop.net/
