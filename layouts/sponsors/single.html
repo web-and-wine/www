@@ -2,18 +2,16 @@
 <main class="content-single">
   <div class="container">
 
-    <div class="d-flex justify-content-center mb-3">
-      <h1>{{ .Title }}</h1>
-    </div>
+    <meta http-equiv="refresh" content = "0;url={{ .Param "external-link" }}">
 
     <div class="d-flex justify-content-center mb-3 sponsor-single">
-      {{ $img := (.Resources.ByType "image").GetMatch "*" }}
-      {{ with $img }}
-      <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
-      {{ end }}
-    </div>
+      You are now leaving Web&Wine and are being redirected to of {{ .Title }}...
 
-    {{ .Content }}
+    </div>  
+    
+    <div class="d-flex justify-content-center mb-3 sponsor-single">
+        If you are not being redirected click&nbsp;<a href="{{ .Param "external-link" }}">here</a>
+    </div>
   </div>
 </main>
 {{ end }}
