@@ -13,13 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2.4.13
         with:
           hugo-version: 0.76.5
           extended: false
       - name: Build
-        run: hugo --minify
+        run: make build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
