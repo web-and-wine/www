@@ -1,12 +1,11 @@
 <div class="sponsor-list">
-    {{ range .Pages }}
- 
+    {{ range shuffle .Pages }}
     {{ if and (eq .Type "sponsors")  .IsPage}}
     <a href="{{ .RelPermalink }}" class="sponsor-list-anchor">
         <div class="sponsor-list-element">
             {{ $img := (.Resources.ByType "image").GetMatch "logo-light" }}
             {{ with $img }}
-            <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
+            <img src="{{ .RelPermalink }}" alt="{{ .Title }} - {{ .Content }}">
             {{ end }}
         </div>
     </a>
