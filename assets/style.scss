@@ -5,7 +5,7 @@ $theme-colors: (
 );
 
 $body-bg: #fff !default;
-$jumbotron-bg: #222;
+$jumbotron-bg: #263238;
 $jumbotron-color: #fff;
 
 
@@ -13,7 +13,7 @@ $jumbotron-color: #fff;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 .bg-dark {
-    background-color: #222 !important;
+    background-color: #263238 !important;
 }
 
 @import "./content-style.scss";
