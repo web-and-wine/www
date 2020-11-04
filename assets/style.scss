@@ -12,11 +12,6 @@ $jumbotron-color: #fff;
 // Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-$fa-font-path: "../fonts/vendor";
-
-@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
-
 .bg-dark {
     background-color: #222 !important;
 }

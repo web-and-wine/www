@@ -12,7 +12,7 @@
   "scripts": {
     "build": "hugo --minify",
     "serve": "hugo serve",
-    "postinstall": "mkdir -p static/fonts/vendor/ static/js/vendor/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js static/js/vendor/ && cp node_modules/@fortawesome/fontawesome-free/webfonts/* static/fonts/vendor/"
+    "postinstall": "mkdir -p static/js/vendor/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js static/js/vendor/"
   },
   "repository": {
     "type": "git",
