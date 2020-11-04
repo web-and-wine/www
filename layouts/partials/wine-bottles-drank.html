@@ -1,0 +1,4 @@
+{{ $json := getJSON "https://api.meetup.com/web-and-wine/events?sign=true&photo-host=public&desc=true&has_ended=true&status=past" }}
+
+{{/* 80 bottles per 4h wedding and 100 guests: https://www.onehopewine.com/blog/how-much-wine-do-i-need-for-a-wedding/ */}}
+{{ math.Round (mul (len $json) (mul 3.14 25) ) }} 

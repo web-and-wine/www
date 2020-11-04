@@ -45,3 +45,46 @@
     }
   }
 }
+
+.wine-bottle {
+  overflow: hidden;
+  backface-visibility: hidden;
+
+  svg {
+    height: 200px;
+  }
+
+  #wine {
+    animation-name: fillAction;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+  }
+  
+  #wave {
+    animation-name: waveAction;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    width: 300px;
+    fill: #5e1224;
+  }
+}
+
+@keyframes fillAction {
+  0% {
+    transform: translate(0, 0px);
+  }
+  100% {
+    transform: translate(0, 280px);
+  }
+}
+@keyframes waveAction {
+  0% {
+      transform: translate(-150px, 0);
+  }
+  100% {
+      transform: translate(0, 0);
+  }
+}

@@ -2,7 +2,13 @@
 
 {{ if not $json }}
 <div class="col-md-12 text-center">
-    Stay tuned for the next event!
+    Stay tuned for more wine! So far we have consumed {{ partial "wine-bottles-drank.html" }} bottles of wine.
+
+    <div class="row justify-content-md-center mt-4">
+        <div class="wine-bottle">
+            {{readFile "wine-bottle.svg" | safeHTML }}
+        </div>
+    </div>
 </div>
 {{ end }}
 
