@@ -1,15 +1,23 @@
 {{ define "main" }}
 <main>
     <section class="py-5">
-        {{ partial "meetup-events.html" (dict "context" . "meetupParams" "sign=true&photo-host=public&desc=true&has_ended=false&status=upcoming" "heading" "Upcoming Events") }}
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-md-12 text-center">
+                    <h2>Upcoming Events</h2>
+                </div>
+            </div>
+            <div class="row">
+                {{ partial "meetup-events.html" (dict "context" . "meetupParams" "sign=true&photo-host=public&desc=true&has_ended=false&status=upcoming" ) }}
+            </div>
+        </div>
     </section>
 
     <section class="bg-dark text-light py-5">
         <div class="container">
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col-lg-12 text-center">
                     <h2>Key Facts</h2>
-                    <hr class="primary">
                 </div>
             </div>
             <div class="row">
@@ -51,7 +59,8 @@
                         <h3>Participate</h3>
                         <p>
                             You have a talk? Then you've come to the right place! We are excited about every submission
-                            or contribution <a target="_blank" and rel="nofollow noopener noreferrer" href="https://github.com/web-and-wine/talks">on Github.com</a>.
+                            or contribution <a target="_blank" and rel="nofollow noopener noreferrer"
+                                href="https://github.com/web-and-wine/talks">on Github.com</a>
                         </p>
                     </div>
                 </div>
@@ -59,15 +68,23 @@
     </section>
 
     <section class="py-5">
-        {{ partial "meetup-events.html" (dict "context" . "meetupParams" "sign=true&photo-host=public&desc=true&has_ended=true&status=past" "heading" "Previous Events") }}
+        <div class="container">
+            <div class="row  mb-3">
+                <div class="col-md-12 text-center">
+                    <h2>Previous Events</h2>
+                </div>
+            </div>
+            <div class="row">
+                {{ partial "meetup-events.html" (dict "context" . "meetupParams" "sign=true&photo-host=public&desc=true&has_ended=true&status=past") }}
+            </div>
+        </div>
     </section>
 
-    <section class="py-5">
+    <section class="pb-5">
         <div class="container">
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col-lg-12 text-center">
                     <h2>Sponsors</h2>
-                    <hr class="primary">
                 </div>
             </div>
             <div class="row">
