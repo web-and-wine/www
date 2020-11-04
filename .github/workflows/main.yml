@@ -21,6 +21,8 @@ jobs:
         with:
           hugo-version: 0.76.5
           extended: false
+      - name: NPM install
+        run: npm install
       - name: Build
         run: make build
       - name: Deploy
