@@ -5,7 +5,7 @@ resources:
 
 
 title: "Ace"
-external-link: https://www.ace.uni-augsburg.de/Startseite/
+external-link: https://www.uni-augsburg.de/de/organisation/einrichtungen/ace/
 ---
 
 
