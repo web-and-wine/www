@@ -111,3 +111,5 @@ typings/
 vendor/
 static/css/style.css
 static/css/style.css.map
+
+public/
