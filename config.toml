@@ -2,6 +2,7 @@ baseurl = "https://webandwine.org"
 languageCode = "en-us"
 title = "Web&Wine"
 enableEmoji = true
+enableRobotsTXT = true
 
 [permalinks]
   post = "/posts/:slug/"

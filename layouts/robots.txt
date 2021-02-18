@@ -1,0 +1,3 @@
+
+User-agent: *
+Allow: /how-to-play
