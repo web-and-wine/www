@@ -5,7 +5,7 @@
         <div class="sponsor-list-element">
             {{ $img := (.Resources.ByType "image").GetMatch "logo-light" }}
             {{ with $img }}
-            <img src="{{ .RelPermalink }}" alt="{{ .Title }} - {{ .Content }}">
+            <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
             {{ end }}
         </div>
     </a>
