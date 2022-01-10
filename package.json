@@ -5,14 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^4.5.3",
-    "fontsource-roboto": "^3.0.3",
-    "node-sass": "^4.13.1"
+    "@fontsource/roboto": "^4.0.0"
   },
   "devDependencies": {},
   "scripts": {
     "build": "hugo --minify",
     "serve": "hugo serve",
-    "postinstall": "mkdir -p static/js/vendor/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js static/js/vendor/ && cp -r node_modules/fontsource-roboto/files static/"
+    "postinstall": "mkdir -p static/js/vendor/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js static/js/vendor/ && cp -r node_modules/@fontsource/roboto/files static/"
   },
   "repository": {
     "type": "git",
