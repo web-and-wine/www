@@ -1,6 +1,6 @@
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="Layer_1" height="512" viewBox="0 0 400 512" width="200" version="1.1">
   <mask id="inside_mask">
-    <path d="m 132.12815,162.17747 -31.30978,35.88756 -7.278267,220.90237 3.982164,67.665 15.382783,19.11314 71.2423,1.36933 32.16819,-8.24696 4.44819,-39.40679 -0.65128,-190.4033 -26.88878,-23.67711 27.78423,-42.09597 -46.1822,-50.1944 -41.31968,-1.32959" id="bottle_inside" fill="black"/><!-- Everything under a black pixel will be invisible -->
+    <path d="m 132.12815,162.17747 -31.30978,35.88756 -7.278267,220.90237 3.982164,67.665 15.382783,19.11314 71.2423,1.36933 32.16819,-8.24696 4.44819,-39.40679 -0.65128,-190.4033 -26.88878,-23.67711 27.78423,-42.09597 -46.1822,-50.1944 -41.31968,-1.32959" id="bottle_inside" fill="white"/><!-- Everything under a black pixel will be invisible -->
   </mask>
   <g mask="url(#inside_mask)">
   <g id="wave">
