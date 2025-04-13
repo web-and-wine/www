@@ -36,6 +36,8 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
   deploy:
     environment:
       name: github-pages
