@@ -32,12 +32,11 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./public
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: ./public
   deploy:
     environment:
       name: github-pages
