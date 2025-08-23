@@ -1,5 +1,6 @@
 ---
 import Logo from '../assets/logo.svg';
+import Link from './link.astro';
 ---
 
 <header>
@@ -18,6 +19,11 @@ import Logo from '../assets/logo.svg';
     <a href="https://discord.gg/PdEVGxGUNh">Join our Discord</a>
     <a href="https://github.com/web-and-wine/talks#readme">Propose a talk</a>
   </div>
+  <nav>
+    <ul>
+      <li><Link href="/">Home</Link></li>
+    </ul>
+  </nav>
 </header>
 
 <style>
@@ -85,5 +91,29 @@ import Logo from '../assets/logo.svg';
 
   .cta a:active {
     background: var(--bg);
+  }
+
+  nav {
+    margin-top: var(--s-md);
+    grid-column: 1 / -1;
+    background: color-mix(in oklab, var(--bg) 10%, var(--fg) 10%);
+    color: var(--fg-light);
+    border-radius: var(--s-xs);
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: var(--s-sm) var(--s-md);
+    font-weight: bold;
+  }
+
+  nav a[aria-current] {
+    color: var(--primary);
   }
 </style>
