@@ -1,0 +1,86 @@
+---
+import Logo from '../assets/logo.svg';
+---
+
+<header>
+	<div class="logo">
+		<Logo  />
+	</div>
+	<div class="intro">
+	<h1>Web&Wine</h1>
+	<p>We meet monthly in and around Augsburg to discuss the latest innovations in web development and related topics.</p>
+	</div>
+<div class="cta">
+		<a href="https://www.meetup.com/de-DE/web-and-wine/">Signup via Meetup</a>
+		<a href="https://discord.gg/PdEVGxGUNh">Join our Discord</a>
+		<a href="https://github.com/web-and-wine/talks">Propose a talk</a>
+	</div>
+</header>
+
+<style>
+	header {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		grid-template-rows: auto auto;
+		align-items: center;
+		gap: 0 var(--s-lg);
+		margin-top: var(--s-xl);
+	}
+
+.logo {
+		grid-column: 1 / 2;
+		grid-row: 1 / 3;
+		display: flex;
+		padding: var(--s-sm) 0;
+	}
+
+	.logo svg {
+		width: 6rem;
+		height: auto;
+		margin: auto;
+	}
+
+	.intro {
+		grid-column: 2 / 3;
+		align-self: bottom;
+		font-size: var(--fs-lg);
+		font-weight: 600;
+		color: var(--fg-light-muted);
+	}
+
+	h1 {
+		font-size: var(--fs-3xl);
+		font-weight: 700;
+		color: var(--fg-light);
+	}
+
+	p {
+		max-width: 40ch;
+	}
+
+	.cta {
+		align-self: start;
+		grid-column: 2 / 3;
+		display: flex;
+		gap: var(--s-xs);
+		flex-wrap: wrap;
+	}
+
+	.cta a {
+		color: var(--fg);
+		background: var(--primary);
+		text-decoration: none;
+		border-radius: var(--s-md);
+		padding: var(--s-xs) var(--s-sm);
+		font-weight: 700;
+	}
+
+	.cta a:focus,
+	.cta a:hover {
+		background: oklch(from var(--primary) calc(l * 1.25) c h)
+	}
+
+	.cta a:active {
+		background: var(--bg);
+	}
+</style>

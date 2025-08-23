@@ -1,0 +1,28 @@
+html,
+body {
+	background: var(--bg-dark);
+	color: var(--fg-light);
+	font-family: var(--font-sans);
+}
+
+body {
+	padding-block: var(--s-md);
+	display: grid;
+	min-height: 100vh;
+	grid-template-areas: var(--grid-template-areas);
+	grid-template-columns: var(--grid-template-columns);
+	grid-auto-rows: min-content;
+}
+
+body > *,
+body > astro-island > * {
+	grid-column: c1 / c6;
+}
+
+* + section {
+	margin-block-start: var(--s-2xl);
+}
+
+* + :is(h1,h2,h3,h4,h5,h6) {
+	margin-top: var(--s-lg);
+}

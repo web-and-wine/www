@@ -1,0 +1,26 @@
+{
+  "name": "www",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^7.1.0",
+    "astro": "^5.8.2",
+    "dompurify": "^3.2.6",
+    "events": "^3.3.0",
+    "ical": "^0.8.0",
+    "insane": "^2.6.2",
+    "jsdom": "^26.1.0",
+    "markdown-wasm": "^1.2.0",
+    "marked": "^15.0.12",
+    "rss-parser": "^3.13.0",
+    "svelte": "^5.33.14",
+    "typescript": "^5.8.3"
+  }
+}
