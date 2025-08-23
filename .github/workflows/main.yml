@@ -2,13 +2,12 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [main]
   pull_request:
-    branches: [ master ]
-  schedule:    
-    - cron: "0 0 * * *"
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * *'
   workflow_dispatch:
-
 
 permissions:
   contents: read
@@ -20,22 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v4
         with:
-          node-version: '12'
-      - name: Hugo setup
-        uses: peaceiris/actions-hugo@v2.4.13
+          node-version: '22'
+      - uses: pnpm/action-setup@v4
         with:
-          hugo-version: 0.76.5
-          extended: true
-      - name: NPM install
-        run: npm install
-      - name: Build
-        run: npm run build
+          version: latest
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint code
+        run: pnpm run lint
+      - name: Build with Astro
+        run: pnpm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./dist
   deploy:
     environment:
       name: github-pages
