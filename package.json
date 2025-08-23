@@ -1,26 +1,33 @@
 {
   "name": "www",
-  "version": "1.0.0",
-  "description": "our website",
-  "main": "index.js",
-  "dependencies": {
-    "bootstrap": "^4.5.3",
-    "@fontsource/roboto": "^4.0.0"
-  },
-  "devDependencies": {},
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "build": "hugo --minify",
-    "serve": "hugo serve",
-    "postinstall": "mkdir -p static/js/vendor/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js static/js/vendor/ && cp -r node_modules/@fontsource/roboto/files static/"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "prettier --check . && astro check",
+    "lint:fix": "prettier --write ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/web-and-wine/www.git"
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/svelte": "^7.1.0",
+    "astro": "^5.8.2",
+    "dompurify": "^3.2.6",
+    "events": "^3.3.0",
+    "ical": "^0.8.0",
+    "insane": "^2.6.2",
+    "jsdom": "^26.1.0",
+    "markdown-wasm": "^1.2.0",
+    "marked": "^15.0.12",
+    "rss-parser": "^3.13.0",
+    "svelte": "^5.33.14",
+    "typescript": "^5.8.3"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/web-and-wine/www/issues"
-  },
-  "homepage": "https://github.com/web-and-wine/www#readme"
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
 }

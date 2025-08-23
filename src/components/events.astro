@@ -1,0 +1,87 @@
+---
+import { GET } from '../pages/events.json.js';
+import { Image } from 'astro:assets';
+import sadBottle from '../assets/sad_bottle.png';
+
+type Event = {
+  summary: string;
+  start: string;
+  description: string;
+};
+
+let response = await GET();
+const events = await response.json();
+
+const formatter = new Intl.DateTimeFormat('en-de', {
+  dateStyle: 'long',
+  timeStyle: 'short',
+});
+const T = (val: string) => formatter.format(new Date(val));
+---
+
+<section>
+  <h2>Upcoming Events</h2>
+  {
+    events.length === 0 ? (
+      <article>
+        <header>
+          <h3>No upcoming events</h3>
+        </header>
+        <Image class="sad-bottle" src={sadBottle} alt="A sad bottle." />
+      </article>
+    ) : (
+      <ul>
+        {events.map((event: Event) => (
+          <li>
+            <article>
+              <header>
+                <h3>{event.summary}</h3>
+                <p>{T(event.start)}</p>
+              </header>
+              <div set:html={event.description} />
+            </article>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</section>
+
+<style>
+  /* Fix weird html from Meetup */
+  article :is(h1, h2, h3, h4, h5, h6) strong {
+    display: contents;
+    text-transform: capitalize;
+  }
+
+  section {
+    grid-column: c1 / c6;
+  }
+
+  section > h2 {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--s-md);
+  }
+
+  section > ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  article {
+    background: var(--bg);
+    color: var(--fg);
+    padding: var(--s-md) var(--s-lg);
+    border-radius: var(--s-sm);
+  }
+
+  .sad-bottle {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+</style>
