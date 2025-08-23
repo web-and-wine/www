@@ -1,10 +1,6 @@
 import ical from 'ical';
 import { marked } from 'marked';
-import { JSDOM } from 'jsdom';
-import DOMPurify from 'dompurify';
-
-let window = new JSDOM('').window;
-let purify = DOMPurify(window);
+import purify from '../utils/purify';
 
 export const prerender = false;
 
@@ -22,7 +18,7 @@ export async function GET() {
     .map((event) => ({
       ...event,
       descriptionRaw: event.description,
-      description: purify.sanitize(marked(event.description)),
+      description: purify(marked(event.description)),
     }));
 
   return new Response(JSON.stringify(events), {
