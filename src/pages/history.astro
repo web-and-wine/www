@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/base.astro';
+
+import { getCollection } from 'astro:content';
+
+const events = await getCollection('events');
+const eventsByYear = events.reduce((acc, event) => {
+  const year = '' + event.data.year || 'Irgendwann';
+
+  acc[year] ??= [];
+  acc[year].push(event.data);
+
+  return acc;
+}, {});
+---
+
+<BaseLayout>
+  <section>
+    <header>
+      <h2>Previously at Web & Wine</h2>
+      <p>
+        Generated from the <a href="https://github.com/web-and-wine/talks/blob/main/README.md"
+          >README.md on GitHub</a
+        >.
+      </p>
+    </header>
+
+    {
+      Object.keys(eventsByYear)
+        .reverse()
+        .map((year) => (
+          <div>
+            <h2>{year}</h2>
+
+            <ul>
+              {eventsByYear[year].map((event) => (
+                <li>
+                  <h3>
+                    {event.month}
+                    {event.sponsor && ` (${event.sponsor.name})`}
+                  </h3>
+
+                  <ul>
+                    {event.talks.map((talk) => (
+                      <li>
+                        {talk.href ? (
+                          <a href={talk.href} target="_blank" rel="noopener noreferrer">
+                            {talk.title}
+                          </a>
+                        ) : (
+                          <span>{talk.title}</span>
+                        )}
+                        {talk.speaker && <span>{talk.speaker}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  div > ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  * + div {
+    margin-top: var(--s-xl);
+  }
+
+  h2 {
+    margin-bottom: var(--s-sm);
+  }
+
+  h3 {
+    margin-top: var(--s-sm);
+    margin-bottom: var(--s-xs);
+  }
+
+  li li {
+    color: var(--fg-light-muted);
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  a:is(:focus, :hover) {
+    color: lch(from var(--primary) calc(l * 1.2) calc(c * 1.2) h);
+  }
+</style>

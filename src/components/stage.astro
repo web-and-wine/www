@@ -10,8 +10,8 @@ import Link from './link.astro';
   <div class="intro">
     <h1>Web&Wine</h1>
     <p>
-      We meet monthly in and around Augsburg to discuss the latest innovations
-      in web development and related topics.
+      We meet monthly in and around Augsburg to discuss the latest innovations in web development
+      and related topics.
     </p>
   </div>
   <div class="cta">
@@ -22,6 +22,7 @@ import Link from './link.astro';
   <nav>
     <ul>
       <li><Link href="/">Home</Link></li>
+      <li><Link href="/history">Talks</Link></li>
     </ul>
   </nav>
 </header>
@@ -103,13 +104,15 @@ import Link from './link.astro';
 
   nav ul {
     display: flex;
+    gap: var(--s-lg);
+    padding: 0 var(--s-lg);
   }
 
   nav a {
     display: block;
     color: inherit;
     text-decoration: none;
-    padding: var(--s-sm) var(--s-md);
+    padding: var(--s-sm) 0;
     font-weight: bold;
   }
 
