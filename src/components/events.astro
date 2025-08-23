@@ -1,14 +1,20 @@
 ---
 import { GET } from "../pages/events.json.js";
 
-let response = await GET(Astro);
+type Event = {
+  summary: string;
+  start: string;
+  description: string;
+};
+
+let response = await GET();
 const events = await response.json();
 
 const formatter = new Intl.DateTimeFormat("en-de", {
   dateStyle: "long",
   timeStyle: "short",
 });
-const T = (val) => formatter.format(new Date(val));
+const T = (val: string) => formatter.format(new Date(val));
 ---
 
 <section>
@@ -16,14 +22,14 @@ const T = (val) => formatter.format(new Date(val));
 
   <ul>
     {
-      events.map((event) => (
+      events.map((event: Event) => (
         <li>
           <article>
             <header>
               <h3>{event.summary}</h3>
               <p>{T(event.start)}</p>
             </header>
-            <div set:html={event.description}></div>
+            <div set:html={event.description} />
           </article>
         </li>
       ))
