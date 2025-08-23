@@ -2,7 +2,7 @@ import ical from 'ical';
 import { marked } from 'marked';
 import purify from '../utils/purify';
 
-export const prerender = false;
+export const prerender = true;
 
 let url = 'https://www.meetup.com/web-and-wine/events/ical/';
 
