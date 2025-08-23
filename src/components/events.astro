@@ -1,5 +1,7 @@
 ---
 import { GET } from "../pages/events.json.js";
+import { Image } from "astro:assets";
+import sadBottle from "../assets/sad_bottle.png";
 
 type Event = {
   summary: string;
@@ -19,22 +21,30 @@ const T = (val: string) => formatter.format(new Date(val));
 
 <section>
   <h2>Upcoming Events</h2>
-
-  <ul>
-    {
-      events.map((event: Event) => (
-        <li>
-          <article>
-            <header>
-              <h3>{event.summary}</h3>
-              <p>{T(event.start)}</p>
-            </header>
-            <div set:html={event.description} />
-          </article>
-        </li>
-      ))
-    }
-  </ul>
+  {
+    events.length === 0 ? (
+      <article>
+        <header>
+          <h3>No upcoming events</h3>
+        </header>
+        <Image class="sad-bottle" src={sadBottle} alt="A sad bottle." />
+      </article>
+    ) : (
+      <ul>
+        {events.map((event: Event) => (
+          <li>
+            <article>
+              <header>
+                <h3>{event.summary}</h3>
+                <p>{T(event.start)}</p>
+              </header>
+              <div set:html={event.description} />
+            </article>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 </section>
 
 <style>
@@ -65,5 +75,13 @@ const T = (val: string) => formatter.format(new Date(val));
     color: var(--fg);
     padding: var(--s-md) var(--s-lg);
     border-radius: var(--s-sm);
+  }
+
+  .sad-bottle {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
   }
 </style>
