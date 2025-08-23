@@ -1,24 +1,24 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-	margin: 0;
+  margin: 0;
 }
 
 html {
-	interpolate-size: allow-keywords;
+  interpolate-size: allow-keywords;
 }
 
 body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 p {
-	text-wrap: pretty;
+  text-wrap: pretty;
 }
 
 h1,
@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-	text-wrap: balance;
+  text-wrap: balance;
 }
 
 img,
@@ -35,22 +35,22 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
 
 nav ul {
-	padding: unset;
+  padding: unset;
 }
 
 nav li {
-	display: unset;
-	list-style: none;
+  display: unset;
+  list-style: none;
 }

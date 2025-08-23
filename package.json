@@ -7,9 +7,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "prettier --check . && astro check",
+    "lint:fix": "prettier --write ."
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/svelte": "^7.1.0",
     "astro": "^5.8.2",
     "dompurify": "^3.2.6",
@@ -22,5 +25,9 @@
     "rss-parser": "^3.13.0",
     "svelte": "^5.33.14",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

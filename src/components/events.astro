@@ -1,7 +1,7 @@
 ---
-import { GET } from "../pages/events.json.js";
-import { Image } from "astro:assets";
-import sadBottle from "../assets/sad_bottle.png";
+import { GET } from '../pages/events.json.js';
+import { Image } from 'astro:assets';
+import sadBottle from '../assets/sad_bottle.png';
 
 type Event = {
   summary: string;
@@ -12,9 +12,9 @@ type Event = {
 let response = await GET();
 const events = await response.json();
 
-const formatter = new Intl.DateTimeFormat("en-de", {
-  dateStyle: "long",
-  timeStyle: "short",
+const formatter = new Intl.DateTimeFormat('en-de', {
+  dateStyle: 'long',
+  timeStyle: 'short',
 });
 const T = (val: string) => formatter.format(new Date(val));
 ---
