@@ -1,61 +1,63 @@
 ---
-import { GET } from '../pages/events.json.js';
+import { GET } from "../pages/events.json.js";
 
-let response = await GET(Astro)
+let response = await GET(Astro);
 const events = await response.json();
 
-const formatter = new Intl.DateTimeFormat("en-de", { dateStyle: "long", timeStyle: "short" });
+const formatter = new Intl.DateTimeFormat("en-de", {
+  dateStyle: "long",
+  timeStyle: "short",
+});
 const T = (val) => formatter.format(new Date(val));
 ---
 
 <section>
-	<h2>Upcoming Events</h2>
+  <h2>Upcoming Events</h2>
 
-	<ul>
-		{events.map((event) => (
-			<li>
-				<article>
-					<header>
-						<h3>
-						{event.summary}
-						</h3>
-						<p>{T(event.start)}</p>
-					</header>
-					<div set:html={event.description}>
-					</div>
-			</article>
-			</li>
-		))}
-	</ul>
+  <ul>
+    {
+      events.map((event) => (
+        <li>
+          <article>
+            <header>
+              <h3>{event.summary}</h3>
+              <p>{T(event.start)}</p>
+            </header>
+            <div set:html={event.description}></div>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
 </section>
 
 <style>
   /* Fix weird html from Meetup */
-	article :is(h1,h2,h3,h4,h5,h6) strong {
-		display: contents;
-		text-transform: capitalize;
-	}
+  article :is(h1, h2, h3, h4, h5, h6) strong {
+    display: contents;
+    text-transform: capitalize;
+  }
 
-	section {
-		grid-column: c1 / c6;
-	}
+  section {
+    grid-column: c1 / c6;
+  }
 
-	section > h2 {
-		font-size: var(--fs-2xl);
-		font-weight: 700;
-		color: var(--primary);
-		margin-bottom: var(--s-md);
-	}
+  section > h2 {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--s-md);
+  }
 
-	section > ul {
-		padding-left: 0;
-		list-style: none;
-	}
+  section > ul {
+    padding-left: 0;
+    list-style: none;
+  }
 
-	article {
-		background: var(--bg);
-		color: var(--fg);
-		padding: var(--s-md) var(--s-lg);
-		border-radius: var(--s-sm);
-	}
+  article {
+    background: var(--bg);
+    color: var(--fg);
+    padding: var(--s-md) var(--s-lg);
+    border-radius: var(--s-sm);
+  }
 </style>
