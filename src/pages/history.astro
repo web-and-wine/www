@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/base.astro';
 
 import { getCollection } from 'astro:content';
 
-const events = await getCollection('events');
+const events = await getCollection('past-events');
 const eventsByYear = events.reduce((acc, event) => {
   const year = '' + event.data.year || 'Irgendwann';
 

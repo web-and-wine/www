@@ -1,5 +1,5 @@
-import events from './collections/events';
+import pastEvents from './collections/past-events';
 
 export const collections = {
-	events,
+	pastEvents,
 };

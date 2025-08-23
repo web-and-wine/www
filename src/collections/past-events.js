@@ -3,7 +3,7 @@ import { defineCollection } from 'astro:content';
 import { z } from 'astro:content';
 
 import { marked } from 'marked';
-import purify from './utils/purify';
+import purify from '../utils/purify';
 
 export default defineCollection({
 	loader: async function (context) {
